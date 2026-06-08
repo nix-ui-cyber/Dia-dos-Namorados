@@ -9,6 +9,8 @@ body {
   overflow-x: hidden;
 }
 
+/* ───────── TÍTULO ───────── */
+
 #headline-container {
   display: flex;
   justify-content: center;
@@ -37,10 +39,10 @@ body {
 
 #emoji {
   font-family: "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif;
-  color: initial;
   background: none;
   -webkit-background-clip: unset;
   background-clip: unset;
+  color: initial;
 }
 
 @keyframes shine {
@@ -48,45 +50,43 @@ body {
   100% { background-position: -50% center; }
 }
 
-/* ───────── GALERIA CORRIGIDA ───────── */
+/* ───────── GALERIA (CORRIGIDA DE VERDADE) ───────── */
 
 .gallery {
-  --d: 36s;
-  display: grid;
-  place-items: center;
   width: 220px;
+  height: 220px;
   margin: 0 auto;
   position: relative;
 }
 
-.gallery > img {
-  grid-area: 1 / 1;
+.gallery img {
+  position: absolute;
   width: 100%;
-  aspect-ratio: 1;
+  height: 100%;
   object-fit: cover;
   border: 10px solid #f2f2f2;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 0 4px rgba(0,0,0,0.45);
 
   opacity: 0;
-  animation: fade var(--d) infinite;
+  animation: show 36s infinite;
 }
 
-/* 12 imagens com sequência correta */
-.gallery > img:nth-child(1)  { animation-delay: 0s; }
-.gallery > img:nth-child(2)  { animation-delay: 3s; }
-.gallery > img:nth-child(3)  { animation-delay: 6s; }
-.gallery > img:nth-child(4)  { animation-delay: 9s; }
-.gallery > img:nth-child(5)  { animation-delay: 12s; }
-.gallery > img:nth-child(6)  { animation-delay: 15s; }
-.gallery > img:nth-child(7)  { animation-delay: 18s; }
-.gallery > img:nth-child(8)  { animation-delay: 21s; }
-.gallery > img:nth-child(9)  { animation-delay: 24s; }
-.gallery > img:nth-child(10) { animation-delay: 27s; }
-.gallery > img:nth-child(11) { animation-delay: 30s; }
-.gallery > img:nth-child(12) { animation-delay: 33s; }
+/* 12 imagens */
+.gallery img:nth-child(1)  { animation-delay: 0s; }
+.gallery img:nth-child(2)  { animation-delay: 3s; }
+.gallery img:nth-child(3)  { animation-delay: 6s; }
+.gallery img:nth-child(4)  { animation-delay: 9s; }
+.gallery img:nth-child(5)  { animation-delay: 12s; }
+.gallery img:nth-child(6)  { animation-delay: 15s; }
+.gallery img:nth-child(7)  { animation-delay: 18s; }
+.gallery img:nth-child(8)  { animation-delay: 21s; }
+.gallery img:nth-child(9)  { animation-delay: 24s; }
+.gallery img:nth-child(10) { animation-delay: 27s; }
+.gallery img:nth-child(11) { animation-delay: 30s; }
+.gallery img:nth-child(12) { animation-delay: 33s; }
 
-@keyframes fade {
-  0% { opacity: 0; transform: scale(0.98); }
+@keyframes show {
+  0% { opacity: 0; transform: scale(1); }
   5% { opacity: 1; }
   25% { opacity: 1; }
   30% { opacity: 0; }
@@ -130,6 +130,7 @@ body {
 
   .gallery {
     width: 150px;
+    height: 150px;
   }
 
   #headline-container {
