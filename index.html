@@ -24,17 +24,15 @@
         <button id="music-btn" onclick="startMusic()">▶ Tocar música 💕</button>
     </div>
 
-    <iframe 
-        id="music"
-        style="display:none; width:0; height:0; border:0"
-        allow="autoplay">
-    </iframe>
+    <audio id="music" loop>
+        <source src="IMG/loving-machine.mp3" type="audio/mpeg">
+    </audio>
 
     <script>
         function startMusic() {
-            const iframe = document.getElementById('music');
-            iframe.src = "https://www.youtube.com/embed/5tpQaCAq6Qc?autoplay=1&loop=1&playlist=5tpQaCAq6Qc&controls=0&showinfo=0&mute=0";
-            
+            const audio = document.getElementById('music');
+            audio.play();
+
             const btn = document.getElementById('music-btn-container');
             btn.style.opacity = '0';
             setTimeout(() => btn.style.display = 'none', 800);
