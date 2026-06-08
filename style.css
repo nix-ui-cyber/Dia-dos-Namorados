@@ -138,7 +138,7 @@ body {
 }
 
 .gallery > img:last-child {
-  animation-name: slide, z-order-last;
+  animation-name: slide, z-order;
 }
 
 @keyframes slide {
