@@ -51,7 +51,6 @@ body {
 }
 
 /* ───────── GALERIA (CORRIGIDA DE VERDADE) ───────── */
-
 .gallery {
   width: 220px;
   height: 220px;
@@ -86,7 +85,7 @@ body {
 .gallery img:nth-child(12) { animation-delay: 33s; }
 
 @keyframes fade {
-  0%   { opacity: 0; transform: scale(1); }
+  0%   { opacity: 0; }
   5%   { opacity: 1; }
   25%  { opacity: 1; }
   30%  { opacity: 0; }
