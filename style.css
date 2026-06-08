@@ -37,30 +37,26 @@ body {
 
 #emoji {
   font-family: "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif;
+  color: initial;
   background: none;
   -webkit-background-clip: unset;
   background-clip: unset;
-  color: initial;
 }
 
 @keyframes shine {
-  0% {
-    background-position: 150% center;
-  }
-
-  100% {
-    background-position: -50% center;
-  }
+  0% { background-position: 150% center; }
+  100% { background-position: -50% center; }
 }
 
-/* ───────── GALERIA ───────── */
+/* ───────── GALERIA CORRIGIDA ───────── */
 
 .gallery {
-  --d: 24s;
+  --d: 36s;
   display: grid;
   place-items: center;
   width: 220px;
   margin: 0 auto;
+  position: relative;
 }
 
 .gallery > img {
@@ -70,97 +66,32 @@ body {
   object-fit: cover;
   border: 10px solid #f2f2f2;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.45);
-  animation:
-    slide var(--d) infinite,
-    z-order var(--d) infinite steps(1);
+
+  opacity: 0;
+  animation: fade var(--d) infinite;
 }
 
-/* 12 fotos */
+/* 12 imagens com sequência correta */
+.gallery > img:nth-child(1)  { animation-delay: 0s; }
+.gallery > img:nth-child(2)  { animation-delay: 3s; }
+.gallery > img:nth-child(3)  { animation-delay: 6s; }
+.gallery > img:nth-child(4)  { animation-delay: 9s; }
+.gallery > img:nth-child(5)  { animation-delay: 12s; }
+.gallery > img:nth-child(6)  { animation-delay: 15s; }
+.gallery > img:nth-child(7)  { animation-delay: 18s; }
+.gallery > img:nth-child(8)  { animation-delay: 21s; }
+.gallery > img:nth-child(9)  { animation-delay: 24s; }
+.gallery > img:nth-child(10) { animation-delay: 27s; }
+.gallery > img:nth-child(11) { animation-delay: 30s; }
+.gallery > img:nth-child(12) { animation-delay: 33s; }
 
-.gallery > img:nth-child(1) {
-  animation-delay: calc(-0 * var(--d) / 12);
-  --r: 12deg;
+@keyframes fade {
+  0% { opacity: 0; transform: scale(0.98); }
+  5% { opacity: 1; }
+  25% { opacity: 1; }
+  30% { opacity: 0; }
+  100% { opacity: 0; }
 }
-
-.gallery > img:nth-child(2) {
-  animation-delay: calc(-1 * var(--d) / 12);
-  --r: -8deg;
-}
-
-.gallery > img:nth-child(3) {
-  animation-delay: calc(-2 * var(--d) / 12);
-  --r: 6deg;
-}
-
-.gallery > img:nth-child(4) {
-  animation-delay: calc(-3 * var(--d) / 12);
-  --r: -12deg;
-}
-
-.gallery > img:nth-child(5) {
-  animation-delay: calc(-4 * var(--d) / 12);
-  --r: 15deg;
-}
-
-.gallery > img:nth-child(6) {
-  animation-delay: calc(-5 * var(--d) / 12);
-  --r: -5deg;
-}
-
-.gallery > img:nth-child(7) {
-  animation-delay: calc(-6 * var(--d) / 12);
-  --r: 10deg;
-}
-
-.gallery > img:nth-child(8) {
-  animation-delay: calc(-7 * var(--d) / 12);
-  --r: -15deg;
-}
-
-.gallery > img:nth-child(9) {
-  animation-delay: calc(-8 * var(--d) / 12);
-  --r: 4deg;
-}
-
-.gallery > img:nth-child(10) {
-  animation-delay: calc(-9 * var(--d) / 12);
-  --r: -10deg;
-}
-
-.gallery > img:nth-child(11) {
-  animation-delay: calc(-10 * var(--d) / 12);
-  --r: 8deg;
-}
-
-.gallery > img:nth-child(12) {
-  animation-delay: calc(-11 * var(--d) / 12);
-  --r: -6deg;
-}
-
-.gallery > img:last-child {
-  animation-name: slide, z-order;
-}
-
-@keyframes slide {
-  0%, 8%, 100% {
-    transform: translateX(0) rotate(var(--r));
-  }
-
-  4% {
-    transform: translateX(140%) rotate(var(--r));
-  }
-}
-
-@keyframes z-order {
-  8% {
-    z-index: 1;
-  }
-
-  10% {
-    z-index: 3;
-  }
-}
-
 
 /* ───────── BOTÃO DE MÚSICA ───────── */
 
