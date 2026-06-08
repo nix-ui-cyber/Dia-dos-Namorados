@@ -161,15 +161,6 @@ body {
   }
 }
 
-@keyframes z-order-last {
-  8% {
-    z-index: 1;
-  }
-
-  10% {
-    z-index: 3;
-  }
-}
 
 /* ───────── BOTÃO DE MÚSICA ───────── */
 
