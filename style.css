@@ -56,6 +56,7 @@ body {
   height: 220px;
   margin: 0 auto;
   position: relative;
+  overflow: hidden;
 }
 
 .gallery img {
@@ -67,10 +68,10 @@ body {
   box-shadow: 0 0 4px rgba(0,0,0,0.45);
 
   opacity: 0;
-  animation: fade 36s infinite;
+  animation: show 36s infinite;
 }
 
-/* 12 imagens */
+/* 12 imagens com sequência limpa */
 .gallery img:nth-child(1)  { animation-delay: 0s; }
 .gallery img:nth-child(2)  { animation-delay: 3s; }
 .gallery img:nth-child(3)  { animation-delay: 6s; }
@@ -84,11 +85,11 @@ body {
 .gallery img:nth-child(11) { animation-delay: 30s; }
 .gallery img:nth-child(12) { animation-delay: 33s; }
 
-@keyframes fade {
+@keyframes show {
   0%   { opacity: 0; }
-  5%   { opacity: 1; }
+  8%   { opacity: 1; }
   25%  { opacity: 1; }
-  30%  { opacity: 0; }
+  33%  { opacity: 0; }
   100% { opacity: 0; }
 }
 
