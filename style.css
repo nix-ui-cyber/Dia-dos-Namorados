@@ -83,6 +83,18 @@ body {
   transform-origin: center;
 }
 
+.gallery img::after {
+  content: "";
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 10px;
+  background: rgba(0,0,0,0.05);
+  border-radius: 10px;
+}
+
 /* leve rotação estilo foto real */
 .gallery img:nth-child(1)  { transform: rotate(2deg); }
 .gallery img:nth-child(2)  { transform: rotate(-2deg); }
