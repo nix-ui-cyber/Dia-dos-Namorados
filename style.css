@@ -67,31 +67,36 @@ body {
   border: 10px solid #f2f2f2;
   box-shadow: 0 0 4px rgba(0,0,0,0.45);
 
-  opacity: 0;
-  animation: show 36s infinite;
+  display: none;
 }
 
-/* 12 imagens */
-.gallery img:nth-child(1)  { animation-delay: 0s; }
-.gallery img:nth-child(2)  { animation-delay: 3s; }
-.gallery img:nth-child(3)  { animation-delay: 6s; }
-.gallery img:nth-child(4)  { animation-delay: 9s; }
-.gallery img:nth-child(5)  { animation-delay: 12s; }
-.gallery img:nth-child(6)  { animation-delay: 15s; }
-.gallery img:nth-child(7)  { animation-delay: 18s; }
-.gallery img:nth-child(8)  { animation-delay: 21s; }
-.gallery img:nth-child(9)  { animation-delay: 24s; }
-.gallery img:nth-child(10) { animation-delay: 27s; }
-.gallery img:nth-child(11) { animation-delay: 30s; }
-.gallery img:nth-child(12) { animation-delay: 33s; }
+/* animação por imagem */
+.gallery img:nth-child(1)  { animation: show1 36s infinite; }
+.gallery img:nth-child(2)  { animation: show2 36s infinite; }
+.gallery img:nth-child(3)  { animation: show3 36s infinite; }
+.gallery img:nth-child(4)  { animation: show4 36s infinite; }
+.gallery img:nth-child(5)  { animation: show5 36s infinite; }
+.gallery img:nth-child(6)  { animation: show6 36s infinite; }
+.gallery img:nth-child(7)  { animation: show7 36s infinite; }
+.gallery img:nth-child(8)  { animation: show8 36s infinite; }
+.gallery img:nth-child(9)  { animation: show9 36s infinite; }
+.gallery img:nth-child(10) { animation: show10 36s infinite; }
+.gallery img:nth-child(11) { animation: show11 36s infinite; }
+.gallery img:nth-child(12) { animation: show12 36s infinite; }
 
-@keyframes show {
-  0% { opacity: 0; transform: scale(1); }
-  5% { opacity: 1; }
-  25% { opacity: 1; }
-  30% { opacity: 0; }
-  100% { opacity: 0; }
-}
+/* cada uma aparece só no seu tempo */
+@keyframes show1  { 0%, 2%, 100% {display:block;} }
+@keyframes show2  { 8%, 10% {display:block;} }
+@keyframes show3  { 16%, 18% {display:block;} }
+@keyframes show4  { 24%, 26% {display:block;} }
+@keyframes show5  { 32%, 34% {display:block;} }
+@keyframes show6  { 40%, 42% {display:block;} }
+@keyframes show7  { 48%, 50% {display:block;} }
+@keyframes show8  { 56%, 58% {display:block;} }
+@keyframes show9  { 64%, 66% {display:block;} }
+@keyframes show10 { 72%, 74% {display:block;} }
+@keyframes show11 { 80%, 82% {display:block;} }
+@keyframes show12 { 88%, 90% {display:block;} }
 
 /* ───────── BOTÃO DE MÚSICA ───────── */
 
