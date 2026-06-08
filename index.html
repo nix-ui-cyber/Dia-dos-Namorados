@@ -9,7 +9,7 @@
 <body>
 
     <div id="headline-container">
-        <div id="shine">Feliz Dia dos Namorados<span id="emoji">💞</span></div>
+        <div id="shine">Feliz Dia dos Namorados <span id="emoji">💞</span></div>
     </div>
 
     <div class="gallery">
@@ -20,11 +20,26 @@
         <img src="IMG/1000102577.jpg" alt="Um casal em lados opostos">
     </div>
 
-    <iframe>
-        src="https://www.youtube.com/embed/5tpQaCAq6Qc?autoplay=1&loop=1&playlist=5tpQaCAq6Qc&controls=0&showinfo=0&mute=0"
-        style="display:none"
+    <div id="music-btn-container">
+        <button id="music-btn" onclick="startMusic()">▶ Tocar música 💕</button>
+    </div>
+
+    <iframe 
+        id="music"
+        style="display:none; width:0; height:0; border:0"
         allow="autoplay">
     </iframe>
+
+    <script>
+        function startMusic() {
+            const iframe = document.getElementById('music');
+            iframe.src = "https://www.youtube.com/embed/5tpQaCAq6Qc?autoplay=1&loop=1&playlist=5tpQaCAq6Qc&controls=0&showinfo=0&mute=0";
+            
+            const btn = document.getElementById('music-btn-container');
+            btn.style.opacity = '0';
+            setTimeout(() => btn.style.display = 'none', 800);
+        }
+    </script>
 
 </body>
 </html>
