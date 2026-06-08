@@ -53,10 +53,10 @@ body {
   }
 }
 
-/* ── Gallery ── */
+/* ───────── GALERIA ───────── */
 
 .gallery {
-  --d: 10s;
+  --d: 24s;
   display: grid;
   place-items: center;
   width: 220px;
@@ -70,72 +70,108 @@ body {
   object-fit: cover;
   border: 10px solid #f2f2f2;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.45);
-  z-index: 2;
   animation:
     slide var(--d) infinite,
     z-order var(--d) infinite steps(1);
+}
+
+/* 12 fotos */
+
+.gallery > img:nth-child(1) {
+  animation-delay: calc(-0 * var(--d) / 12);
+  --r: 12deg;
+}
+
+.gallery > img:nth-child(2) {
+  animation-delay: calc(-1 * var(--d) / 12);
+  --r: -8deg;
+}
+
+.gallery > img:nth-child(3) {
+  animation-delay: calc(-2 * var(--d) / 12);
+  --r: 6deg;
+}
+
+.gallery > img:nth-child(4) {
+  animation-delay: calc(-3 * var(--d) / 12);
+  --r: -12deg;
+}
+
+.gallery > img:nth-child(5) {
+  animation-delay: calc(-4 * var(--d) / 12);
+  --r: 15deg;
+}
+
+.gallery > img:nth-child(6) {
+  animation-delay: calc(-5 * var(--d) / 12);
+  --r: -5deg;
+}
+
+.gallery > img:nth-child(7) {
+  animation-delay: calc(-6 * var(--d) / 12);
+  --r: 10deg;
+}
+
+.gallery > img:nth-child(8) {
+  animation-delay: calc(-7 * var(--d) / 12);
+  --r: -15deg;
+}
+
+.gallery > img:nth-child(9) {
+  animation-delay: calc(-8 * var(--d) / 12);
+  --r: 4deg;
+}
+
+.gallery > img:nth-child(10) {
+  animation-delay: calc(-9 * var(--d) / 12);
+  --r: -10deg;
+}
+
+.gallery > img:nth-child(11) {
+  animation-delay: calc(-10 * var(--d) / 12);
+  --r: 8deg;
+}
+
+.gallery > img:nth-child(12) {
+  animation-delay: calc(-11 * var(--d) / 12);
+  --r: -6deg;
 }
 
 .gallery > img:last-child {
   animation-name: slide, z-order-last;
 }
 
-.gallery > img:nth-child(1) {
-  animation-delay: calc(0 * var(--d));
-  --r: 16deg;
-}
-
-.gallery > img:nth-child(2) {
-  animation-delay: calc(-0.2 * var(--d));
-  --r: -1deg;
-}
-
-.gallery > img:nth-child(3) {
-  animation-delay: calc(-0.4 * var(--d));
-  --r: -19deg;
-}
-
-.gallery > img:nth-child(4) {
-  animation-delay: calc(-0.6 * var(--d));
-  --r: 6deg;
-}
-
-.gallery > img:nth-child(5) {
-  animation-delay: calc(-0.8 * var(--d));
-  --r: -8deg;
-}
-
 @keyframes slide {
-  0%, 20%, 100% {
+  0%, 8%, 100% {
     transform: translateX(0) rotate(var(--r));
   }
 
-  10% {
-    transform: translateX(120%) rotate(var(--r));
+  4% {
+    transform: translateX(140%) rotate(var(--r));
   }
 }
 
 @keyframes z-order {
-  10%, 20% {
+  8% {
     z-index: 1;
   }
 
-  80% {
-    z-index: 2;
+  10% {
+    z-index: 3;
   }
 }
 
 @keyframes z-order-last {
-  10%, 20% {
+  8% {
     z-index: 1;
   }
 
-  90% {
-    z-index: 2;
+  10% {
+    z-index: 3;
   }
 }
 
-/* ── Botão de música ── */
+/* ───────── BOTÃO DE MÚSICA ───────── */
 
 #music-btn-container {
   display: flex;
@@ -162,7 +198,7 @@ body {
   box-shadow: 0 6px 25px rgba(255, 0, 102, 0.6);
 }
 
-/* ── Responsivo ── */
+/* ───────── RESPONSIVO ───────── */
 
 @media (max-width: 600px) {
   #shine {
